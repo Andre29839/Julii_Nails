@@ -5,11 +5,7 @@ import "../css/main.css";
 
 function App() {
   const [count, setCount] = useState(0);
-
-  document.forms.ourForm.onsubmit = function (e) {
-    e.preventDefault();
-  };
-
+  console.log(count);
   return (
     <>
       <div className="header">link</div>
@@ -23,10 +19,6 @@ function App() {
         <div></div>
         <div></div>
       </div>
-      <from>
-        <input type="text" name="ourForm" />
-        <button type="submit">Send</button>
-      </from>
       <a className="linkLogo" href="">
         Abracadabra
       </a>
