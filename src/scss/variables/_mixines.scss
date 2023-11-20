@@ -1,0 +1,44 @@
+@mixin root($padding: 10px, $textAlign) {
+  margin: 0 auto;
+  padding: $padding;
+  text-align: $textAlign;
+}
+
+@mixin padd($color, $padd...) {
+  padding: $padd;
+}
+
+@mixin link($link, $hover, $focus) {
+  .linkLogo {
+    background-color: $link;
+
+    &:hover {
+      background-color: darken($link, 20%);
+    }
+
+    &:focus {
+      background-color: $focus;
+    }
+
+    @content;
+  }
+}
+
+@mixin grid($colm, $margin) {
+  float: left;
+  background-color: aquamarine;
+  margin-right: $margin;
+  margin-bottom: $margin;
+  height: 150px;
+
+  @if ($colm >= 5) {
+    width: 100%;
+    margin-right: 0;
+  } @else {
+    width: ((100% - (($colm - 1) * $margin)) / $colm);
+    margin-right: $margin;
+  }
+  &:nth-child(#{$colm}n) {
+    margin-right: 0;
+  }
+}

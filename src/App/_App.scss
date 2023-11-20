@@ -1,0 +1,90 @@
+@import "../scss/variables/variables";
+@import "../scss/variables/mixines";
+
+#root {
+  max-width: $width;
+  @include root($textAlign: center, $padding: 2em);
+}
+
+.logo {
+  @include padd(red, 20px 40px 30px 50px);
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  -webkit-transition: -webkit-filter 300ms;
+  transition: -webkit-filter 300ms;
+  transition: filter 300ms;
+  transition: filter 300ms, -webkit-filter 300ms;
+
+  &:hover {
+    -webkit-filter: $logoHover;
+    filter: $logoHover;
+  }
+
+  &.react:hover {
+    -webkit-filter: $logoHoverRact;
+    filter: $logoHoverRact;
+  }
+}
+
+@-webkit-keyframes logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    -webkit-animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear;
+  }
+}
+.card:not(.text) {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@include link(green, black, red);
+
+.header {
+  @include link(green, black, red);
+  font-weight: 20px;
+
+  &:hover {
+    color: #b90;
+  }
+}
+
+#grid {
+  float: left;
+  width: 100%;
+
+  div {
+    @include grid(4, 5%);
+  }
+}
+
+@for $i from 24 to 29 {
+  .#{$someVar}-#{$i} {
+    width: 50px + $i * 3;
+    height: 50px + $i / 2;
+  }
+}

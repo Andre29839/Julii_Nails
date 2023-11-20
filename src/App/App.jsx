@@ -1,13 +1,35 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
+import "../css/main.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  document.forms.ourForm.onsubmit = function (e) {
+    e.preventDefault();
+  };
+
   return (
     <>
+      <div className="header">link</div>
+      <div id="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <from>
+        <input type="text" name="ourForm" />
+        <button type="submit">Send</button>
+      </from>
+      <a className="linkLogo" href="">
+        Abracadabra
+      </a>
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
